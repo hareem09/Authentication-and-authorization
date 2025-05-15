@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 app.get('/read', (req, res) => {
 
     // Verify the token
-    let data= jwt.verify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhcmVlbWV4YW1wbGVAZ2FtaWwuY29tIiwiaWF0IjoxNzQ3MzM2MzY0fQ.71lTRv8m9-E9AgsbcPGzTJw2XWpQVNCsJ45W48vlTxA", "secretkey")
+    let data= jwt.verify(req.cookies.token, "secretkey")
     console.log(data)
 })
 app.listen(3000 , () => {
