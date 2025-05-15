@@ -12,7 +12,7 @@ app.get('/', async (req, res) => {
  })
 })
 app.get('/compare', async (req, res) => {
-  bcrypt.compare("password", "$2b$10$rKmKNq5gBZpmBLyHSTh8Ve8ZAzXzfs7FGj6yJHJjbK.66oA.DYGDW", function(err, result) {
+  bcrypt.compare("password", hash, function(err, result) {
    //result == true
    console.log(result)
    res.send(result)
